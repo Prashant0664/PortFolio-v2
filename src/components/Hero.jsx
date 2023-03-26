@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { styles } from '../styles'
 // import Computers from './canvas/Computers'
+import {ArrowDownIcon, ChevronDownIcon} from '@heroicons/react/24/outline'
 import ComputersCanvas from './canvas/Computers'
 const Hero = () => {
   return (
@@ -34,6 +35,15 @@ const Hero = () => {
           </div>
       </div>
           <ComputersCanvas />
+          <div className='hero-bc-01 bottom-32'>
+            <a href="#about">
+              <div className='hero-bc-02'>
+                <ChevronDownIcon className='hero-bc-03'/>
+                {/* <ChevronDownIcon className='hero-bc-03'/> */}
+                {/* <ChevronDownIcon className='hero-bc-03'/> */}
+              </div>
+            </a>
+          </div>
     </section>
   )
 }
