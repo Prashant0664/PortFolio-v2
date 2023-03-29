@@ -486,7 +486,7 @@ body {
     margin-top:25px;
     padding: 30px;
 }
-.content-p-work{
+.p-work{
     z-index: 2000;
     color: white;
 }
@@ -582,12 +582,27 @@ body {
     /* opacity: 0; */
     /* visibility: hidden; */
 }
-
+.card-work{
+    overflow: visible;
+}
 .content-p1-work{
 
 }
-
-
+.content-head-word{
+    display: none;
+}
+.content-p2-work{
+    text-align: center;
+    display:flex;
+    position: absolute;
+}
+.content-p2-work2{
+    display:none;
+    /* position:fixed; */
+}
+.content-p2-work2:hover{
+    display:block;
+}
 
 
 @media screen and (max-width:800px) {

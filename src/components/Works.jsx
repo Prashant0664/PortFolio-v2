@@ -1,17 +1,21 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-// import { img1 } from "./img.jpg"
-// import { img2 } from "../assets";
 import { styles } from "../styles";
 import { github } from "../assets";
-// import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { img3 } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({states,changerev,change,index}) => {
-  console.log(states);
+const ProjectCard = ({ states, changerev, change, index }) => {
+  var [sss,csss]=React.useState(false);
+  const change2=()=>{
+    csss(sss=true);
+  }
+  const changer2=()=>{
+    csss(sss=false);
+  }
+  var mmm = true;
   return (
     <motion.div variants={fadeIn("up", "spring", 1 * 0.5, 0.75)}>
       <Tilt
@@ -22,63 +26,67 @@ const ProjectCard = ({states,changerev,change,index}) => {
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
-        
-
-        <div className="card-work"  onMouseOver={()=>change(index)} onMouseOut={()=>changerev(index)}>
+        <div className="card-work" onMouseOver={() => { change(index); mmm = !mmm; change2(); }} onMouseLeave={() => {changerev(index);changer2();}}>
           <div className="imgBx-work">
             <img src={img3[0].img} />
             {/* can use date, texh used on hover along with desc */}
-            <div className={true?'content-head-word2':'constent-head-work'}>
-              <h2 className="content-p-work">Card Three</h2>
-              <p className=''>HTML, CSS, JAVASCRIPT, MERN, FIREBASE</p>
+            <div className={states[index] ? 'content-head-word2' : 'constent-head-work'}>
+              <h2 className="content-p-work">Card {index}</h2>
+              <p className={sss ? 'content-p2-work' : 'content-p2-work2'}>HTML, CSS, JAVASCRIPT, MERN, FIREBASE</p>
             </div>
           </div>
           <div className="content-work">
-
             <p className="content-p-work">kjtrbvbntrjjjbgvntrkgv jbktrjgvktrjnvrtnbvn gtjkvnbykntv</p>
           </div>
         </div>
-
-        
       </Tilt>
     </motion.div>
   );
 };
 
 const Works = () => {
-  
-  var DEMO="DEMO";
-  var arr=[
+
+  var DEMO = "DEMO";
+  var arr = [
     {
-      img:img3[0].img,
-      name:DEMO,
+      img: img3[0].img,
+      name: DEMO,
     },
-    
+
     {
-      img:img3[0].img,
-      name:DEMO,
+      img: img3[0].img,
+      name: DEMO,
     },
-    
+
     {
-      img:img3[0].img,
-      name:DEMO,
+      img: img3[0].img,
+      name: DEMO,
     },
 
   ];
-  var statesi=[];
-  const n=arr.length;
-  var [states,setstates]=React.useState([]);
-  for(var ih=0;ih<n;ih++){
-    statesi.push(false);
+  var statesi = [];
+  const n = arr.length;
+  // var [states,setstates]=React.useState([]);
+  React.useEffect(() => {
+    for (var ih = 0; ih < n; ih++) {
+      statesi.push(false);
+    }
+  }, [])
+  // React.useEffect(()=>{for(var ih=0;ih<n;ih++){
+  //   setstates(states=>[...states,statesi[ih]])
+  // }},[])
+  const change = (m) => {
+    statesi[m] = true;
+    // console.log("--", statesi);
+    // setstates((mm)=>{[...statesi,statesi[mm]=true]})
   }
-  React.useEffect(()=>{for(var ih=0;ih<n;ih++){
-    setstates(states=>[...states,statesi[ih]])
-  }},[])
-  const change=(m)=>{
-    setstates((mm)=>{[...statesi,statesi[mm]=true]})
-  }
-  const changerev=(m)=>{
-    setstates((mm)=>{[...statesi,statesi[mm]=false]})
+  const changerev = (m) => {
+    statesi[m] = false;
+    // console.log("++", statesi);
+    // for(var ih=0;ih<n;ih++){
+    //   statesi[ih]=false;
+    // }
+    // setstates((mm)=>{[...statesi,statesi[mm]=false]})
   }
   return (
     <>
@@ -97,17 +105,16 @@ const Works = () => {
       </div>
 
       <div className='container-work mt-20 flex flex-wrap gap-7'>
-        
-        
-        
-        {arr.map((i,j)=>{console.log(i,j);console.log(states);  return (<ProjectCard states={states} changerev={changerev} change={change} index={j}/>)})}
-        
-        
-        
-        <div className="card-work"  onMouseOver={()=>change()} onMouseOut={()=>changerev()}>
+
+
+
+        {arr.map((i, j) => { return (<ProjectCard key={Math.random()} states={statesi} changerev={changerev} change={change} index={j} />) })}
+
+
+
+        {/* <div className="card-work"  onMouseOver={()=>change()} onMouseOut={()=>changerev()}>
           <div className="imgBx-work">
             <img src={img3[0].img} />
-            {/* can use date, texh used on hover along with desc */}
             <div className={states?'content-head-word2':'constent-head-work'}>
               <h2 className="content-p-work">Card Three</h2>
               <p className=''>HTML, CSS, JAVASCRIPT, MERN, FIREBASE</p>
@@ -145,7 +152,7 @@ const Works = () => {
             <h2 className="content-p-work">Card Three</h2>
             <p className="content-p-work">kjtrbvbntrjjjbgvntrkgv jbktrjgvktrjnvrtnbvn gtjkvnbykntv</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
