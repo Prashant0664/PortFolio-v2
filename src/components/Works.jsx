@@ -10,16 +10,10 @@ import { projects } from "../constants";
 import { img3 } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-}) => {
+const ProjectCard = ({states,changerev,change,index}) => {
+  console.log(states);
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", 1 * 0.5, 0.75)}>
       <Tilt
         options={{
           max: 45,
@@ -28,48 +22,64 @@ const ProjectCard = ({
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
-        <div className='relative w-full h-[230px]'>
-          <img
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
-          />
+        
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
+        <div className="card-work"  onMouseOver={()=>change(index)} onMouseOut={()=>changerev(index)}>
+          <div className="imgBx-work">
+            <img src={img3[0].img} />
+            {/* can use date, texh used on hover along with desc */}
+            <div className={true?'content-head-word2':'constent-head-work'}>
+              <h2 className="content-p-work">Card Three</h2>
+              <p className=''>HTML, CSS, JAVASCRIPT, MERN, FIREBASE</p>
             </div>
+          </div>
+          <div className="content-work">
+
+            <p className="content-p-work">kjtrbvbntrjjjbgvntrkgv jbktrjgvktrjnvrtnbvn gtjkvnbykntv</p>
           </div>
         </div>
 
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-        </div>
-
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
-        </div>
+        
       </Tilt>
     </motion.div>
   );
 };
 
 const Works = () => {
+  
+  var DEMO="DEMO";
+  var arr=[
+    {
+      img:img3[0].img,
+      name:DEMO,
+    },
+    
+    {
+      img:img3[0].img,
+      name:DEMO,
+    },
+    
+    {
+      img:img3[0].img,
+      name:DEMO,
+    },
+
+  ];
+  var statesi=[];
+  const n=arr.length;
+  var [states,setstates]=React.useState([]);
+  for(var ih=0;ih<n;ih++){
+    statesi.push(false);
+  }
+  React.useEffect(()=>{for(var ih=0;ih<n;ih++){
+    setstates(states=>[...states,statesi[ih]])
+  }},[])
+  const change=(m)=>{
+    setstates((mm)=>{[...statesi,statesi[mm]=true]})
+  }
+  const changerev=(m)=>{
+    setstates((mm)=>{[...statesi,statesi[mm]=false]})
+  }
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -82,17 +92,30 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          My projects overview for my portfolio website:<br/>As a software and web developer, I have worked on various projects that showcase my skills and creativity. Here are some of the highlights of my portfolio:
+          My projects overview for my portfolio website:<br />As a software and web developer, I have worked on various projects that showcase my skills and creativity. Here are some of the highlights of my portfolio:
         </motion.p>
       </div>
 
       <div className='container-work mt-20 flex flex-wrap gap-7'>
-        <div className="card-work">
+        
+        
+        
+        {arr.map((i,j)=>{console.log(i,j);console.log(states);  return (<ProjectCard states={states} changerev={changerev} change={change} index={j}/>)})}
+        
+        
+        
+        <div className="card-work"  onMouseOver={()=>change()} onMouseOut={()=>changerev()}>
           <div className="imgBx-work">
             <img src={img3[0].img} />
-            <h2 className="content-p-work">Card Three</h2>
+            {/* can use date, texh used on hover along with desc */}
+            <div className={states?'content-head-word2':'constent-head-work'}>
+              <h2 className="content-p-work">Card Three</h2>
+              <p className=''>HTML, CSS, JAVASCRIPT, MERN, FIREBASE</p>
+            </div>
           </div>
           <div className="content-work">
+
+
             <p className="content-p-work">kjtrbvbntrjjjbgvntrkgv jbktrjgvktrjnvrtnbvn gtjkvnbykntv</p>
           </div>
         </div>
