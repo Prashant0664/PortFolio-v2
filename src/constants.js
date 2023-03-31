@@ -142,12 +142,11 @@ import {
   
   const testimonials = [
     {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      testimonial:"Prashant is a talented and reliable web developer who always delivers high-quality work on time and within budget. He has a keen eye for design and usability, and he is proficient in various web technologies and frameworks.",
+         name: "Pratyaksh",
+      designation: "Coder",
+      company: "DTU",
+      image: "https://prashant0664.github.io/My-Portfolio-React/images/avatar-1.png",
     },
     {
       testimonial:

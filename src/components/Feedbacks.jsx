@@ -44,21 +44,62 @@ const FeedbackCard = ({
 
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
-      <div
-        className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
-      >
-        <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={styles.sectionHeadText}>Testimonials.</h2>
-        </motion.div>
+    <>
+    <div className="feedback-body">
+
+    <div className="container-feedback">
+        <div className="card-feedback">
+        <div className="feedback-lines">
+              
+              </div>
+              <div className="feedback-imgBx">
+                <img src={testimonials[0].image} className=""/>
+            </div>
+            <div className="feedback-content">
+              <div className='feedback-details'>
+                <h2 className="feedback-h1a">Design</h2>
+                <p className="feedback-pa">{testimonials[0].testimonial}</p>
+                <a hrej="#">View Source</a>
+              </div>
+            </div>
+        </div>
       </div>
-      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
-        ))}
+      <div className="container-feedback">
+        <div className="card-feedback">
+        <div className="feedback-lines">
+              
+              </div>
+              <div className="feedback-imgBx">
+                <img src={testimonials[0].image} className=""/>
+            </div>
+            <div className="feedback-content">
+              <div className='feedback-details'>
+                <h2 className="feedback-h1a">Design</h2>
+                <p className="feedback-pa">jhvjmjvhjvjuyhjy vgbvuybv khivh hiychj hyc juycj buycjbguycj bhyc bjgtcuj </p>
+                <a hrej="#">View Source</a>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div className="container-feedback">
+        <div className="card-feedback">
+        <div className="feedback-lines">
+              
+              </div>
+              <div className="feedback-imgBx">
+                <img src={testimonials[0].image} className=""/>
+            </div>
+            <div className="feedback-content">
+              <div className='feedback-details'>
+                <h2 className="feedback-h1a">Design</h2>
+                <p className="feedback-pa">{testimonials[0].testimonial}</p>
+                <a hrej="#">View Source</a>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
+    </>
   );
 };
 
