@@ -50,7 +50,7 @@ class App {
   }
 
   initCamera = () => {
-    this.ratio = 1;
+    this.ratio = window.innerWidth/window.innerHeight;
     this.camera = new THREE.PerspectiveCamera(60, this.ratio, 0.1, 10000);
     this.camera.lookAt(this.scene.position);
     this.camera.position.set(0, 15, 30);
