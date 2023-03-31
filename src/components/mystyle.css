@@ -946,7 +946,7 @@ overflow: hidden;
 
 @media screen and (max-width:700px) {
     .contact-motion-div {
-        height:500350px; 
+        height:500px; 
      }
     .contact-container{
         margin-top: 3rem;
@@ -1023,3 +1023,45 @@ overflow: hidden;
         padding:-100px;   
     }
 }
+
+
+
+/* Earth Model */
+
+.marker:before {
+	content: '';
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: white;
+	position: absolute;
+	left: 50%;
+	top: -50%;
+}
+
+.app-wrapper {
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+.markers {
+	position: relative;
+	padding: 0;
+	list-style-type: none;
+    background-color: #ff00e1;
+}
+
+.marker {
+	color: white;
+	font-weight: 300;
+	font-size: 14px;
+    background-color: red;
+}
+
+
+  .dg.a {
+      margin-top: 10px;
+      min-width: 300px;
+      background-color: #00f2ff;
+  }

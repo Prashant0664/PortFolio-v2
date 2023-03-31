@@ -1,8 +1,10 @@
 import React from 'react'
-
+// import App from "./scripts/app"
 const Earth = () => {
+  // App.render();
   return (
-    <div>Earth</div>
+<>
+<div className="" id="SHOWEARTH"></div></>
   )
 }
 
