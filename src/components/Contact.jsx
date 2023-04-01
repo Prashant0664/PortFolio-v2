@@ -1,134 +1,119 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
-import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
-import { slideIn } from "../utils/motion";
-
-const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
+import React from 'react'
+import { FaBeer, FaInstagram, FaGithub,FaLinkedin , FaMailchimp,  } from 'react-icons/fa';
+import './css.css';
+import toast, { Toaster } from 'react-hot-toast';
+const rootUrl = 'https://mail-senderv1api.onrender.com';
+var About_Me = [
+  {
+    Location_map: [
+      {
+        Location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223994.25250226617!2d76.94804665529392!3d28.692332876507237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d047309fff32f%3A0xfc5606ed1b5d46c3!2sDelhi!5e0!3m2!1sen!2sin!4v1661751462175!5m2!1sen!2sin"
+      },
+      {
+        Message: "SEND MESSAGE"
+      }
+    ]
+  }
+]
+export default function Contact() {
+  const [data, setName] = React.useState({
     name: "",
-    email: "",
-    message: "",
+    gmail: "",
+    content: "",
+    subject: "",
+    phone: "",
   });
-
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    if (!data.name || !data.gmail || !data.content) {
+      const notify = () => toast('PLEASE FILL ALL REQUIRED CREDENTIALS');
+      notify();
+      return
+    };
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "PortFolio Contact",
-          from_email: form.email,
-          to_email: "prashant201103gmail.com",
-          message: form.message,
+    try {
+      const url = `${rootUrl}/api/v1/report`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Your Message has been received, I will contact you ASAP");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("ERROR: Something Went Wrong:( Please Try Again Later:) !");
-        }
-      );
+        body: JSON.stringify(data),
+      });
+      const notify = () => toast('MAIL SENT SUCCESSFULLY');
+      notify();
+    } catch (error) {
+      const notify = () => toast(error);
+      notify();
+      console.log(error);
+    }
   };
-
+  const isActive = false;
+  
   return (
-    <div
-      className={`contact-container`}
-    >
-      <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className='contact-subcontainer'
-      >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+    <>
+        <h3 className="works-m3">Contact Form</h3>
+    <div className='contact-sectionb'>
+      
+      <section className="contact-form">
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className='contact-form'
-        >
-          <label className='contact-label'>
-            <span className='contact-form-span '>Your Name</span>
-            <input
-              type='text'
-              name='name'
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your good name?"
-              className='contact-form-input'
-            />
-          </label>
-          <label className='contact-label'>
-            <span className='contact-form-span '>Your email</span>
-            <input
-              type='email'
-              name='email'
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your web address?"
-              className='contact-form-input'
-            />
-          </label>
-          <label className='contact-label'>
-            <span className='contact-form-span '>Your Message</span>
-            <textarea
-              rows={7}
-              name='message'
-              value={form.message}
-              onChange={handleChange}
-              placeholder='What you want to say?'
-              className='contact-form-input'
-            />
-          </label>
 
-          <button
-            type='submit'
-            className='contact-form-button'
-          >
-            {loading ? "Sending..." : "Send"}
+        <form action="#" className="form">
+
+          <div className="input-wrapper">
+            <input type="text" name="fullname" className="form-input" placeholder="Full name" 
+            value={data.name}
+            onChange={(e) => { setName(ev => ({ ...ev, name: e.target.value })) }}/>
+
+            <input type="email" name="email" className="form-input" value={data.gmail}
+              placeholder='Enter Your Gmail...'
+              onChange={(e) => { setName(ev => ({ ...ev, gmail: e.target.value })) }}/>
+          </div>
+
+          <textarea name="message" className="form-input" value={data.content}
+              placeholder='TYPE YOUR MESSAGE HERE...'
+              onChange={(e) => { setName(ev => ({ ...ev, content: e.target.value })) }} ></textarea>
+
+          <button className="form-btn" type="submit">
+            <ion-icon name="paper-plane" onClick={handleSubmit}></ion-icon>
+            {About_Me[0].Location_map[1].Message}
+             
           </button>
-        </form>
-      </motion.div>
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className='contact-motion-div xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
-      >
-        <EarthCanvas />
-      </motion.div>
-    </div>
-  );
-};
 
-export default Contact;
+        </form>
+        
+        <Toaster
+          toastOptions={{
+            className: '',
+            style: {
+              border: '1px solid brown',
+              padding: '16px',
+              color: 'green',
+              borderShadow: '1rem 1rem red',
+              textAlign: "center"
+            },
+          }}
+        />
+      </section>
+      <article className=''>
+        {/* <h2 className="h2 article-title active">Contact</h2> */}
+        <section className="mapbox" data-mapbox>
+          <figure>
+            <iframe src={About_Me[0].Location_map[0].Location}
+              width="600" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
+        </section>
+      </article>
+
+    </div>
+    <div className="footer">
+    <div className="footer-2">
+      {/* <BsInstagram /> */}
+      <a href="https://www.linkedin.com/in/prashant-693591228/" className='cbl1'><h1><FaInstagram /></h1></a>
+      <a href="https://www.github.com/prashant0664"className='cbl1'><h1><FaGithub /></h1></a>
+      <a href="https://www.linkedin.com/in/prashant-693591228/"className='cbl1'><h1><FaLinkedin /></h1></a>
+    </div>
+  </div>
+    </>
+  )
+}

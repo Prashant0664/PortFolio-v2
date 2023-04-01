@@ -1,0 +1,308 @@
+ :root{
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+}
+  hr {
+    border-color: rgb(66, 65, 65);
+    border-style: solid;
+  }
+  .footer{
+    background-color: black;
+    bottom:0px;
+    position: relative;
+    height:40px;
+    width:100%;
+    margin-top: 20px;
+    color:white;
+  }
+  .footer-2{
+
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-2{
+    color:grey;
+  }
+  .footer-2:hover{
+    color:white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .contacts-list {
+    color: white;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .contact-title {
+    font-size: 16px;
+    color: bisque;
+  }
+  
+  .contact-title::selection {
+    background-color: rgb(250, 114, 114);
+    color: rgb(86, 57, 2);
+  }
+.works-m3{
+    padding-left: 1.5%;
+    font-size: 22px;
+}
+.cbl1{
+    text-decoration: none;
+}
+  .contact-sectionb{
+    display:flex;
+    /* flex-direction: column; */
+    /* display:none; */
+    /* visibility: 0; */
+    /* position: relative; */
+    /* opacity: 0; */
+    width:100%;
+    gap:6%
+    /* justify-content: center; */
+  }
+  
+  .mapbox {
+    height: 350px;
+    width:200%;
+    border-radius: 24px;
+    margin-bottom: 30px;
+    border: 1px solid var(--jet);
+    overflow: hidden;
+  }
+  
+  .mapbox figure {
+    height: 100%;
+  }
+  
+  .mapbox iframe {
+    border-radius: 14px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(1) invert(1);
+  }
+
+  
+  
+  
+  
+  .contact-form {
+    margin-bottom: 10px;
+    width:50%;
+  }
+  
+  .form-title {
+    margin-bottom: 20px;
+  }
+  
+  .input-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .form-input {
+    background-color: rgb(47, 47, 47);
+    border-color: rgb(57, 57, 57);
+    color: rgb(236, 236, 102);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-400);
+    padding: 13px 20px;
+    border: 1px solid var(--jet);
+    border-radius: 14px;
+    margin-left: 17px;
+    margin-right: 17px;
+    overflow-y: scroll;
+  }
+  
+  .form-input::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+  }
+  
+  .form-input::-webkit-scrollbar-track {
+    background: black
+      /* color of the tracking area */
+  }
+  
+  .form-input::-webkit-scrollbar-thumb {
+    background-color: black;
+    /* color of the scroll thumb */
+    border-radius: 14px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgb(70, 67, 67)
+      /* creates padding around scroll thumb */
+  }
+  
+  .form-input::placeholder {
+    font-weight: var(--fw-500);
+  }
+  
+  .form-input:focus {
+    border-color: rgb(57, 57, 57);
+  }
+  
+  textarea.form-input {
+    min-height: 100px;
+    height: 120px;
+    max-height: 200px;
+    width:50%;
+    resize: vertical;
+    margin-bottom: 25px;
+  }
+  
+  textarea.form-input::-webkit-resizer {
+    display: none;
+  }
+  
+  .form-input:focus:invalid {
+    border-color: var(--bittersweet-shimmer);
+  }
+  
+  .form-btn {
+    position: relative;
+    width: 100%;
+    background: transparent;
+    color: rgb(179, 125, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 20px;
+    border-radius: 14px;
+    font-size: var(--fs-6);
+    text-transform: capitalize;
+    box-shadow: var(--shadow-3);
+    z-index: 1;
+    transition: 340ms;
+  }
+  
+  .form-btn::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+    transition: var(--transition-1);
+  }
+  
+  .form-btn ion-icon {
+    font-size: 16px;
+  }
+  
+  .form-btn:hover {
+    background: var(--bg-gradient-yellow-1);
+  }
+  
+  .form-btn:hover::before {
+    background: var(--bg-gradient-yellow-2);
+  }
+  
+  .form-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .form-btn:disabled:hover {
+    background: var(--border-gradient-onyx);
+  }
+  
+  .form-btn:disabled:hover::before {
+    background: var(--bg-gradient-jet);
+  }
+
+  
+  
+  @media screen and (max-width:1000px) {
+    .mapbox{
+        width:120%;
+    }
+}
+@media screen and (max-width:870px) {
+    .mapbox{
+        width:120%;
+    }
+ 
+    .contact-sectionb{
+        display:flex;
+        /* flex-direction: column; */
+        /* display:none; */
+        /* visibility: 0; */
+        /* position: relative; */
+        /* opacity: 0; */
+        width:100%;
+        gap:2%
+        /* justify-content: center; */
+      }   
+}
+
+@media screen and (max-width:777px) {
+    .mapbox{
+        width:120%;
+    }
+ 
+    .contact-sectionb{
+        display:flex;
+        /* flex-direction: column; */
+        /* display:none; */
+        /* visibility: 0; */
+        /* position: relative; */
+        /* opacity: 0; */
+        width:100%;
+        gap:0%
+        /* justify-content: center; */
+      }   
+}
+
+@media screen and (max-width:870px) {
+    .mapbox{
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        /* height: ; */
+    }
+ 
+    .contact-sectionb{
+        display:flex;
+        /* flex-direction: column; */
+        /* display:none; */
+        /* visibility: 0; */
+        /* position: relative; */
+        /* opacity: 0; */
+        flex-direction: column;
+        width:100%;
+        justify-content: center;
+        justify-items: center;
+        gap:2%
+        /* justify-content: center; */
+      }   
+      .form-input{
+        width: 100%;
+      }
+      .input-wrapper{
+        width: 100%;
+      }
+      .contact-form{
+        width: 90%;
+      }textarea.form-input {
+        min-height: 100px;
+        height: 120px;
+        max-height: 200px;
+        width:100%;
+        justify-items: center;
+        justify-self: center;
+        resize: vertical;
+        margin-bottom: 25px;
+        /* margin: auto auto; */
+      }
+}

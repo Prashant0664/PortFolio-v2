@@ -2,6 +2,12 @@ import logo from "./logo-no-background.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
+import w1 from "./w1.jpeg";
+import w2 from "./w2.jpeg";
+import w3 from "./w3.jpeg";
+import w4 from "./w4.jpeg";
+import w5 from "./w5.jpeg";
+import w6 from "./w6.jpeg";
 import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
@@ -21,12 +27,15 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
+
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
-import tiffinshalalogo from "./company/tiffinshala-logo.png";
 import ieee from "./company/ieee-logo.png";
+import invictus from "./company/invictus.png";
+import tiffinshalalogo from "./company/tiffinshala-logo.png";
+import vihaan from "./company/vihaan.webp";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -49,6 +58,7 @@ export {
   html,
   javascript,
   mongodb,
+  w1,w2,w3,w4,w5,w6,
   nodejs,
   reactjs,
   redux,
@@ -62,5 +72,8 @@ export {
   tesla,
   carrent,
   jobit,
+  ieee,
+  invictus,
+  vihaan,
   tripguide,
 };

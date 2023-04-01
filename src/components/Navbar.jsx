@@ -11,9 +11,8 @@ const Navbar = () => {
     return (
       <>
         <li key={Math.random()} className={`${active === link.link.title ? "fwhite text-white" : "text-secondary"} fwhite hover:text-white text-[18px]`}>
-          <a key={Math.random()} href={`#${link.link.id}`} className='navlist-i fwhite linksnav text-white no-underline'>
+          <a key={Math.random()} href={`${link.link.id}`} className='navlist-i fwhite linksnav text-white no-underline'>
             <p className=' text-white '>
-
               {link.link.title}
             </p>
           </a>

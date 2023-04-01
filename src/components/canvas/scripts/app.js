@@ -67,7 +67,7 @@ class App {
     this.stats.domElement.style.right = '10px';
     this.stats.domElement.style.bottom = '10px';
     this.stats.domElement.style.display = 'none';
-    document.body.appendChild( this.stats.domElement );
+    document.getElementById("root").appendChild( this.stats.domElement );
   }
 
   render = () => {

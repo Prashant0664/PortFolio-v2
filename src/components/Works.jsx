@@ -7,7 +7,7 @@ import { projects } from "../constants";
 import { img3 } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({ states, changerev, change, index }) => {
+const ProjectCard = ({ project, states, changerev, change, index }) => {
   var [sss,csss]=React.useState(false);
   const change2=()=>{
     csss(sss=true);
@@ -15,6 +15,7 @@ const ProjectCard = ({ states, changerev, change, index }) => {
   const changer2=()=>{
     csss(sss=false);
   }
+  // console.log(project)
   var mmm = true;
   return (
     <motion.div variants={fadeIn("up", "spring", 1 * 0.5, 0.75)}>
@@ -26,18 +27,20 @@ const ProjectCard = ({ states, changerev, change, index }) => {
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
+        {/* <a href={project.source_code_link} */}
         <div className="card-work" onMouseOver={() => { change(index); mmm = !mmm; change2(); }} onMouseLeave={() => {changerev(index);changer2();}}>
           <div className="imgBx-work">
-            <img src={img3[0].img} />
-            {/* can use date, texh used on hover along with desc */}
-            <div className={states[index] ? 'content-head-word2' : 'constent-head-work'}>
-              <h2 className="content-p-work">Card {index}</h2>
-              <p className={sss ? 'content-p2-work' : 'content-p2-work2'}>HTML, CSS, JAVASCRIPT, MERN, FIREBASE</p>
+            <img src={project.image} className="img-work2" />
+            
+            <div className={states[index] ? 'content-head-word2 jfkxdkn' : 'constent-head-work jfkxdkn'}>
+              <h2 className="content-p-work">{project.name}</h2>
+              <p className={sss ? 'content-p2-work techn' : 'content-p2-work2 techn'}>{project.tech}</p>
             </div>
           </div>
           <div className="content-work">
-            <p className="content-p-work">kjtrbvbntrjjjbgvntrkgv jbktrjgvktrjnvrtnbvn gtjkvnbykntv</p>
+            <p className="content-p-work">{project.description}</p>
           </div>
+          <a href={project.source_code_link} className={sss?"work-linkk2":"work-linkk"}>Source code</a>
         </div>
       </Tilt>
     </motion.div>
@@ -108,7 +111,7 @@ const Works = () => {
 
 
 
-        {arr.map((i, j) => { return (<ProjectCard key={Math.random()} states={statesi} changerev={changerev} change={change} index={j} />) })}
+        {projects.map((i, j) => { return (<ProjectCard key={Math.random()} project={i} states={statesi} changerev={changerev} change={change} index={j} />) })}
 
 
 
