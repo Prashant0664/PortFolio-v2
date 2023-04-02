@@ -1006,6 +1006,45 @@ overflow: hidden;
 }
 
 /* Contact form  Ends */
+/* stars */
+.stars-div1{
+    height:80vh;
+    width:100%;
+    /* overflow: visible; */
+    border:none
+}
+.iframec{
+    /* overflow: visible; */
+    border:none;
+}
+.iframec::-webkit-scrollbar{
+    display: none;
+    color:red;
+}
+.stars-div1::-webkit-scrollbar{
+    display: none;
+}
+@media screen and (max-width:600px) {
+    .stars-div1{
+        height:70vh;
+        width:100%;
+        /* overflow: visible; */
+        border:none
+    }
+    .iframec{
+        width:100%;
+        height:100%;
+        /* overflow: visible; */
+        border:none;
+    }
+    .iframec::-webkit-scrollbar{
+        display: none;
+        color:red;
+    }
+    .stars-div1::-webkit-scrollbar{
+        display: none;
+    }
+}
 @media screen and (max-width:930px) {
     .menu-top-nav {
         display: flex;
