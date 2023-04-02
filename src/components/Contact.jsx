@@ -20,11 +20,12 @@ export default function Contact() {
     name: "",
     gmail: "",
     content: "",
-    subject: "",
-    phone: "",
+    subject: "---------",
+    phone: "000000000",
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // console.log(data);
     if (!data.name || !data.gmail || !data.content) {
       const notify = () => toast('PLEASE FILL ALL REQUIRED CREDENTIALS');
       notify();
@@ -49,7 +50,7 @@ export default function Contact() {
     }
   };
   const isActive = false;
-  
+  // console.log(data);
   return (
     <>
         <h3 className="works-m3" id="contact">Contact Form</h3>
@@ -58,7 +59,7 @@ export default function Contact() {
       <section className="contact-form">
 
 
-        <form action="#" className="form">
+        <form  className="form" onSubmit={handleSubmit}>
 
           <div className="input-wrapper">
             <input type="text" name="fullname" className="form-input" placeholder="Full name" 
