@@ -38,10 +38,6 @@ import {
       title: "Work",
     },
     {
-      id: "#contact",
-      title: "Contact",
-    },
-    {
       id:"#experience",
       title:"Work Exp.",
     },
@@ -52,6 +48,11 @@ import {
     {
       id:"#testimonials",
       title:"Testimonials",
+    },
+    
+    {
+      id: "#contact",
+      title: "Contact",
     },
     {
       id:"https://drive.google.com/file/d/1pRajC8Y8oLghyHUXA6r7zwPCsxAqHZQ6/view?usp=sharing",

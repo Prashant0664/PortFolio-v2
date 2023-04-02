@@ -52,7 +52,7 @@ export default function Contact() {
   
   return (
     <>
-        <h3 className="works-m3">Contact Form</h3>
+        <h3 className="works-m3" id="contact">Contact Form</h3>
     <div className='contact-sectionb'>
       
       <section className="contact-form">

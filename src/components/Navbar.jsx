@@ -27,7 +27,7 @@ const Navbar = () => {
     return (
       <>
         <li key={Math.random()} className={`${active === link.link.title ? " nav-item-menu fwhite text-white" : "text-secondary"} fwhite hover:text-white text-[18px]`}>
-          <a key={Math.random()} href={`#${link.link.id}`} className='navlist-i fwhite nav-item-menu  menu-links text-white no-underline'>
+          <a key={Math.random()} href={`${link.link.id}`} className='navlist-i fwhite nav-item-menu  menu-links text-white no-underline'>
             <p className=' text-white menu-itemp '>
 
               {link.link.title}

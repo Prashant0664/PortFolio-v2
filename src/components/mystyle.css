@@ -1006,7 +1006,21 @@ overflow: hidden;
 }
 
 /* Contact form  Ends */
+@media screen and (max-width:930px) {
+    .menu-top-nav {
+        display: flex;
+        justify-content: end;
+        justify-items: center;
+    }
 
+    .ul-list-top {
+        display: none;
+    }
+    .About-into{
+        font-size: 12px;
+        text-align: justify;
+    }
+}
 @media screen and (max-width:700px) {
     .contact-motion-div {
         height:500px; 
@@ -1022,7 +1036,6 @@ overflow: hidden;
         display: flex;
         justify-content: end;
         justify-items: center;
-        /* width:30px; */
     }
 
     .ul-list-top {

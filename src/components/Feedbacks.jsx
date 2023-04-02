@@ -35,7 +35,7 @@ const FeedbackCard = ({
 const Feedbacks = () => {
   return (
     <>
-      <div className="feed-headn">Testimonials</div>
+      <div className="feed-headn" id="testimonials">Testimonials</div>
       <div className="feedback-body">
 
         {testimonials.map((x,i)=>{ return <FeedbackCard key={i} testimonial={x} index={i}/>})}

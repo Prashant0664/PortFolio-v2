@@ -85,19 +85,13 @@ const Works = () => {
   }
   const changerev = (m) => {
     statesi[m] = false;
-    // console.log("++", statesi);
-    // for(var ih=0;ih<n;ih++){
-    //   statesi[ih]=false;
-    // }
-    // setstates((mm)=>{[...statesi,statesi[mm]=false]})
   }
   return (
     <>
       <motion.div variants={textVariant()}>
         {/* <p className={`${styles.sectionSubText}  works-m1`}>My work</p> */}
-        <h1 className={`${styles.sectionHeadText} works-m2`}>Projects</h1>
+        <h1 className={`${styles.sectionHeadText} works-m2`} id="project">Projects</h1>
       </motion.div>
-
       <div className='w-full flex'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
