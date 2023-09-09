@@ -8,6 +8,7 @@ import w3 from "./w3.jpeg";
 import w4 from "./w4.jpeg";
 import w5 from "./w5.jpeg";
 import w6 from "./w6.jpeg";
+import blog from "./blog.png";
 import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
@@ -76,4 +77,5 @@ export {
   invictus,
   vihaan,
   tripguide,
+  blog,
 };
