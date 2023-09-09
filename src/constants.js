@@ -1,6 +1,6 @@
 import {
     img,
-    w1,w2,w3,w4,w5,w6,
+    w1,w2,w3,w4,w5,w6,blog,
     mobile,
     backend,
     creator,
@@ -154,17 +154,6 @@ import {
 
   const experiences = [
     {
-      title: "IIF-USIP Internship",
-      company_name: "Tiffinshala",
-      icon: tiffinshalalogo,
-      iconBg: "grey",
-      date: "March 2023 - Present",
-      points: [
-        "Developing and maintaining their newly launched Tiffinshala App on Android phones",
-        
-      ],
-    },
-    {
       title: "Co-Head Invictus",
       company_name: "Invictus",
       icon: invictus,
@@ -187,13 +176,33 @@ import {
       ],
     },
     {
-      title: "Website Development Lead Vihaan",
+      title: "Website Development and PR Lead Vihaan",
       company_name: "IEEE-DTU",
       icon: vihaan,
       iconBg: "grey",
       date: "March 2023 - April 2023",
       points: [
-        "As a Website Development lead, I am responsible for overseeing the design, development and maintenance of our company's websites.",
+        "As a Website Development and PR lead, I am responsible for overseeing the design, development and maintenance of our IEEE's websites along with successful and smoothless execution of VIHAAN.",
+      ],
+    },
+    {
+      title: "Computer Society Coordinator, IEEE DTU",
+      company_name: "IEEE-DTU",
+      icon: ieee,
+      iconBg: "grey",
+      date: "June 2023 - May 2024",
+      points: [
+        "Responsible for overseeing and conducting all the events under or related to the computer society.",
+      ],
+    },
+    {
+      title: "Public Relations Coordinator, IEEE DTU",
+      company_name: "IEEE-DTU",
+      icon: ieee,
+      iconBg: "grey",
+      date: "June 2023 - May 2024",
+      points: [
+        "Public Relations and Publicity Coordinator, IEEE DTU",
       ],
     },
   ];
@@ -234,6 +243,25 @@ import {
   ];
   
   const projects = [
+    {
+      name: "Blogging Website",
+      description:
+        "A powerful full stack blogging website where anyone can post their content, projects, views, blogs etc. which will be visible to everone and they can comment, follow, save others profile and posts and so many other features.",
+      tags: [
+        {
+          name: "MERN",
+        },
+        {
+          name: "Blog",
+        },
+        {
+          name: "Nodemailer",
+        },
+      ],
+      tech:"MERN, Blog, WebD",
+      image:blog,
+      source_code_link: "https://github.com/Prashant0664/Blog-website",
+    },
     {
       name: "Image Generator",
       description:
