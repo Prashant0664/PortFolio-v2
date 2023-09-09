@@ -93,11 +93,11 @@ import {
   
   const technologies = [
     {
-      name: "HTML 5",
+      name: "HTML5",
       icon: html,
     },
     {
-      name: "CSS 3",
+      name: "CSS3",
       icon: css,
     },
     {
@@ -105,23 +105,23 @@ import {
       icon: javascript,
     },
     {
-      name: "TypeScript",
+      name: "ExpressJS",
       icon: typescript,
     },
     {
-      name: "React JS",
+      name: "React-JS",
       icon: reactjs,
     },
     {
-      name: "Redux Toolkit",
+      name: "Redux-Toolkit",
       icon: redux,
     },
     {
-      name: "Tailwind CSS",
+      name: "Tailwind-CSS",
       icon: tailwind,
     },
     {
-      name: "Node JS",
+      name: "NodeJS",
       icon: nodejs,
     },
     {
@@ -129,21 +129,36 @@ import {
       icon: mongodb,
     },
     {
-      name: "Three JS",
+      name: "ThreeJS",
       icon: threejs,
     },
     {
-      name: "git",
-      icon: git,
+      name: "C++",
+      icon: mongodb,
     },
     {
-      name: "figma",
-      icon: figma,
+      name: "VS-Code",
+      icon: threejs,
     },
     {
-      name: "docker",
-      icon: docker,
+      name: "DSA",
+      icon: mongodb,
     },
+    {
+      name: "OOPS",
+      icon: threejs,
+    },
+    {
+      name: "DBMS",
+      icon: mongodb,
+    },
+    {
+      name: "Flutter",
+      icon: threejs,
+    },
+    
+    
+    
   ];
   
   const img3=[
