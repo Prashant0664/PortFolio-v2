@@ -129,7 +129,7 @@ import {
       icon: mongodb,
     },
     {
-      name: "ThreeJS",
+      name: "C",
       icon: threejs,
     },
     {
@@ -153,7 +153,7 @@ import {
       icon: mongodb,
     },
     {
-      name: "Flutter",
+      name: "Git",
       icon: threejs,
     },
     
@@ -185,7 +185,7 @@ import {
       company_name: "IEEE-DTU",
       icon: ieee,
       iconBg: "grey",
-      date: "January 2023- Present",
+      date: "January 2023-September 2023",
       points: [
         "I am a web development mentor at Similar Interest group and Techweek IEEE-DTU. I help aspiring web developers learn the skills and tools they need to create dynamic and responsive websites.",
       ],
@@ -218,6 +218,16 @@ import {
       date: "June 2023 - May 2024",
       points: [
         "Public Relations and Publicity Coordinator, IEEE DTU",
+      ],
+    },
+    {
+      title: "Website Coordinator, Invictus",
+      company_name: "Invictus-DTU",
+      icon: invictus,
+      iconBg: "grey",
+      date: "January 2024 - February 2024",
+      points: [
+        "Responsible for developing and managing the website of Invictus.",
       ],
     },
   ];
