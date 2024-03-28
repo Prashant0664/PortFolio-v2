@@ -67,7 +67,7 @@ const ComputersCanvas=()=>{
     gl={{preserveDrawingBuffer:true}}
     >
       <Suspense fallback={<CanvasLoader/>}>
-        <OrbitControls enableZoom={true} 
+        <OrbitControls enableZoom={false} 
         // maxPolarAngle={Math.PI/2}
         // minPolarAngle={Math.PI/2}
         // minAzimuthAngle= {Math.PI/2}
