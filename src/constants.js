@@ -159,11 +159,11 @@ import {
 
     {
       name: "NextJS",
-      icon: nextjs,
+      icon: threejs,
     },
     {
       name: "Mongoose",
-      icon: Mongoose,
+      icon: threejs,
     },
     
     
