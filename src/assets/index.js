@@ -8,6 +8,7 @@ import w3 from "./w3.jpeg";
 import w4 from "./w4.jpeg";
 import w5 from "./w5.jpeg";
 import w6 from "./w6.jpeg";
+import w7 from "./w7.png";
 import blog from "./blog.png";
 import web from "./web.png";
 import github from "./github.png";
@@ -78,4 +79,5 @@ export {
   vihaan,
   tripguide,
   blog,
+  w7
 };

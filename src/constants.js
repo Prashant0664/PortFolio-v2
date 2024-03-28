@@ -1,6 +1,6 @@
 import {
     img,
-    w1,w2,w3,w4,w5,w6,blog,
+    w1,w2,w3,w4,w5,w6,blog,w7,
     mobile,
     backend,
     creator,
@@ -75,7 +75,7 @@ import {
       index:1,
     },
     {
-      title: "Backend Developer",
+      title: "Management",
       icon: mobile,
       index:2,
     },
@@ -281,6 +281,25 @@ import {
   
   const projects = [
     {
+      name: "Invictus'24",
+      description:
+        "Invictus 2024 website which was visited by over 20K students to know about the one of largest Techfest of India at DTU. ",
+      tags: [
+        {
+          name: "NextJS",
+        },
+        {
+          name: "Team",
+        },
+        {
+          name: "MongoDB",
+        },
+      ],
+      tech:"NextJS, Team, MongoDB",
+      image:w7,
+      source_code_link: "https://github.com/Invictus-DTU/Invictus24",
+    },
+    {
       name: "Blogging Website",
       description:
         "A powerful full stack blogging website where anyone can post their content, projects, views, blogs etc. which will be visible to everone and they can comment, follow, save others profile and posts and so many other features.",
@@ -298,25 +317,6 @@ import {
       tech:"MERN, Blog, WebD",
       image:blog,
       source_code_link: "https://github.com/Prashant0664/Blog-website",
-    },
-    {
-      name: "Image Generator",
-      description:
-        "An image generator website is a platform that allows users to create stunning visuals instantly by using ChatGPT. Users can input text prompts and describe what they want to see with phrases, and the website will generate an image.",
-      tags: [
-        {
-          name: "React",
-        },
-        {
-          name: "ChatGPT",
-        },
-        {
-          name: "TailwindCSS",
-        },
-      ],
-      tech:"React, TailwindCSS, JS",
-      image:w6,
-      source_code_link: "https://github.com/Prashant0664/Image-Generator",
     },
     {
       name: "E-Commerce",
