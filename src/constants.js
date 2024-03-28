@@ -55,7 +55,7 @@ import {
       title: "Contact",
     },
     {
-      id:"https://drive.google.com/file/d/1pRajC8Y8oLghyHUXA6r7zwPCsxAqHZQ6/view?usp=sharing",
+      id:"https://drive.google.com/file/d/1yxXOb0Nb6A2QagbJgiTIVw7crjwv4b8m/view?usp=drive_link",
       title:"Resume",
     },
     {
